@@ -1,6 +1,7 @@
 package com.example.loginapplication.rest
 
 import com.google.gson.annotations.SerializedName
+import java.time.OffsetDateTime
 
 data class HydraMember(
     @SerializedName("@id")
@@ -8,11 +9,11 @@ data class HydraMember(
     @SerializedName("@type")
     val atType: String,
     val confirmed: Boolean,
-    val ending: String,
+    val ending: OffsetDateTime,
     val id: Int,
     val owner: String,
     val paymentUrl: String,
     val price: Double,
-    val start: String,
+    val start: OffsetDateTime,
     val type: Int
 )

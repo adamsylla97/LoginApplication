@@ -1,14 +1,15 @@
 package com.example.loginapplication.rest
 
+import com.example.loginapplication.Config
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RestServiceBuilder {
 
-    private const val url = "" //TODO ADD URL
+    private const val url = "https://google.com" //TODO ADD URL
     private val httpClient = OkHttpClient.Builder().addInterceptor { chain ->
-        val request = chain.request().newBuilder().addHeader("Authorization", "Bearer ${""}").build() //TODO ADD TOKEN FROM DATABASE
+        val request = chain.request().newBuilder().addHeader("Authorization", "Bearer ${Config.token}").build() //TODO ADD TOKEN FROM DATABASE
         chain.proceed(request)
     }.build()
 

@@ -10,6 +10,6 @@ interface RestLoginService {
     suspend fun login(@Body data: LoginData): LoginResponse
 
     @GET("/api/subscriptions")
-    suspend fun getSubscriptions(): SubscriptionResponse
+    suspend fun getSubscriptions(): List<SubscriptionResponse>
 
 }
