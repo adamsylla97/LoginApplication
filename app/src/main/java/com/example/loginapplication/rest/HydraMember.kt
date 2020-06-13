@@ -9,11 +9,11 @@ data class HydraMember(
     @SerializedName("@type")
     val atType: String,
     val confirmed: Boolean,
-    val ending: OffsetDateTime,
+    val ending: String,
     val id: Int,
     val owner: String,
     val paymentUrl: String,
     val price: Double,
-    val start: OffsetDateTime,
+    val start: String,
     val type: Int
 )

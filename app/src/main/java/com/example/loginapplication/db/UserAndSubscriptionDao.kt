@@ -1,9 +1,6 @@
 package com.example.loginapplication.db
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Transaction
+import androidx.room.*
 
 @Dao
 interface UserAndSubscriptionDao {
@@ -13,6 +10,12 @@ interface UserAndSubscriptionDao {
 
     @Insert
     fun insertSubscription(subscription: Subscription): Long
+
+    @Delete
+    fun deleteUser(user: User)
+
+    @Delete
+    fun deleteSubscription(subscription: Subscription)
 
     @Transaction
     @Query("SELECT * FROM User")

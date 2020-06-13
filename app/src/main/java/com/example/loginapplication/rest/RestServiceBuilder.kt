@@ -7,9 +7,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RestServiceBuilder {
 
-    private const val url = "https://google.com" //TODO ADD URL
+    private const val url = "https://run.mocky.io/" //TODO ADD URL
     private val httpClient = OkHttpClient.Builder().addInterceptor { chain ->
-        val request = chain.request().newBuilder().addHeader("Authorization", "Bearer ${Config.token}").build() //TODO ADD TOKEN FROM DATABASE
+        val request = chain.request().newBuilder().addHeader("Authorization", "Bearer ${Config.token}").build()
         chain.proceed(request)
     }.build()
 
