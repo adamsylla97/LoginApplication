@@ -41,9 +41,11 @@ class MainActivity : AppCompatActivity(), MainView {
         loginButton.setOnClickListener {
             val username = username.text.toString()
             val password = password.text.toString()
-            //viewModel.test()
             viewModel.login(username, password)
-            //viewModel.test()
+        }
+
+        registerButton.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
         }
 
     }
